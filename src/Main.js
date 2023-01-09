@@ -2,9 +2,11 @@ import React from "react";
 import HornedBeast from "./HornedBeast";
 class Main extends React.Component {
 
-  constructor(){
-    super();
-    this.data = [{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      hornedBeastsData: [{
         "_id": 1,
         "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
         "title": "UniWhal",
@@ -29,13 +31,18 @@ class Main extends React.Component {
         "description": "Someone wearing a very silly unicorn head mask",
         "keyword": "unicorn",
         "horns": 1
-    }];
+      }]
+    }
   }
 
   render() {
+    // add state in render instance method
+    const {hornedBeastsData} = this.state;
+    console.log(hornedBeastsData);
+
     return (
     <main>
-      {this.data.map(beast => {
+      {hornedBeastsData.map(beast => {
               return <HornedBeast title={beast.title} description={beast.description} imageUrl={beast.image_url}/>; 
             })}
     </main>);
