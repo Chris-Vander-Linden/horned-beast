@@ -1,3 +1,13 @@
+Number and name of feature: Display Images and Allow Users to Favorite Individual Beasts
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 10 PM
+
+Finish time: 12 AM
+
+Actual time needed to complete: 2 hours
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

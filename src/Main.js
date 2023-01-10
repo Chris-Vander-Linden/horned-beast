@@ -5,14 +5,12 @@ class Main extends React.Component {
 
   constructor(props){
     super(props);
-    console.log("data.json");
     this.state = {
       hornedBeastsData: hornedBeastsData
     }
   }
 
   render() {
-    // add state in render instance method
     const {hornedBeastsData} = this.state;
     console.log(hornedBeastsData);
 
