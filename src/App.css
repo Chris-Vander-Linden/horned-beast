@@ -39,3 +39,7 @@ h1 {
   display: block;
   margin: auto;
 }
+
+.beastContainer img:hover {
+  cursor: pointer;
+}
