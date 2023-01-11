@@ -55,7 +55,11 @@
 
 .beastContainer .img-container:active {
   box-shadow: 1px 1px 3px rgb(139, 99, 99);
-  overflow: hidden;
+}
+
+/* required for mobile to prevent image from bleeding out */
+.beastContainer .img-container:hover, .beastContainer .img-container:active{
+    overflow: hidden;
 }
 
 .beastContainer img {
