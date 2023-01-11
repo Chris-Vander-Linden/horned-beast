@@ -5,6 +5,11 @@ h2 {
   font-weight: bold;
 }
 
+h1 {
+  font-size: 35px;
+  margin: 0;
+}
+
 :root {
   box-sizing: border-box;
   text-align: center;
