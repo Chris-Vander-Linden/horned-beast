@@ -16,10 +16,28 @@ class Main extends React.Component {
 
     return (
     <main>
-      {hornedBeastsData.map(beast => {
-              return <HornedBeast id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url}/>; 
+      {hornedBeastsData.map((beast, index) => {
+              return <HornedBeast key={index} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url}/>; 
             })}
-    </main>);
+
+      {/*
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="d-flex flex-column flex-lg-row justify-content-lg-center panel">
+                <div class="item">Flex item 1</div>
+                <div class="item">Flex item 2</div>
+                <div class="item">Flex item 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      */}
+
+
+
+    </main>
+    );
   }
 
 }
