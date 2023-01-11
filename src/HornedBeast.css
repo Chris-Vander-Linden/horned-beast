@@ -50,10 +50,12 @@
 
 .beastContainer .img-container:hover {
   box-shadow: 1px 1px 12px rgb(59, 5, 11);
+  overflow: hidden;
 }
 
 .beastContainer .img-container:active {
   box-shadow: 1px 1px 3px rgb(139, 99, 99);
+  overflow: hidden;
 }
 
 .beastContainer img {
