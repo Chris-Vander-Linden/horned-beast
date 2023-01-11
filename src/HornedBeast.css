@@ -1,10 +1,11 @@
 /* Outer container for beast component */
 .beastContainer {
-  flex: 1 1 300px;
+  flex: 1 1 250px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   border-radius: 10px;
   margin: 5px;
@@ -43,9 +44,8 @@
   border-radius: 50%;
   box-shadow: 1px 1px 7px rgb(79, 57, 57);
 
-  overflow: hidden;
-  height: 298px;
-  width: 298px;
+  height: 248px;
+  width: 248px;
 }
 
 .beastContainer .img-container:hover {
@@ -54,6 +54,13 @@
 
 .beastContainer .img-container:active {
   box-shadow: 1px 1px 3px rgb(139, 99, 99);
+}
+
+/* required for mobile to prevent image from bleeding out? */
+.beastContainer .img-container,
+.beastContainer .img-container:hover,
+.beastContainer .img-container:active {
+  overflow: hidden;
 }
 
 .beastContainer img {
@@ -68,12 +75,21 @@
   transform: scale(1.03, 1.03);
 }
 
+/* remove hover on mobile */
+@media only screen and (max-width: 500px) {
+  .beastContainer img:hover {
+    transform: scale(1, 1);
+  }
+}
+
 .beastContainer img:active {
   transform: unset;
   transition: all 0.1s;
 }
 
-.beastDescription {
+.beastDescription-container {
+  width: calc(100% - 10px);
+
   border-radius: 5px;
   background-color: rgba(185, 249, 249, 0.5);
 
