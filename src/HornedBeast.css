@@ -48,6 +48,10 @@
   width: 298px;
 }
 
+.beastContainer .img-container:hover {
+  box-shadow: 1px 1px 12px rgb(59, 5, 11);
+}
+
 .beastContainer .img-container:active {
   box-shadow: 1px 1px 3px rgb(139, 99, 99);
 }
@@ -67,16 +71,6 @@
 .beastContainer img:active {
   transform: unset;
   transition: all 0.1s;
-}
-
-.beastContainer:active .heart div {
-  transform: scale(1.2, 1.2);
-  transition: all .2s;
-}
-
-.beastContainer:active .heart div:nth-child(2) {
-  opacity: 0;
-  transition: all 0.3s;
 }
 
 .beastDescription {
@@ -111,4 +105,16 @@
   font-size: 22px;
   top: 32px;
   right: 23px;
+}
+
+.beastContainer:active .heart div {
+  transform: scale(1.2, 1.2);
+  text-shadow: 2px 2px 9px #000, -1px -1px 3 #000, 1px -1px 3 #000,
+    -1px 1px 3 #000, 1px 1px 3 #000;
+  transition: all 0.2s;
+}
+
+.beastContainer:active .heart div:nth-child(2) {
+  opacity: 0;
+  transition: all 0.3s;
 }
