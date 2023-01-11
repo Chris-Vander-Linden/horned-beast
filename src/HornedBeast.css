@@ -19,7 +19,12 @@
   );
 
   box-shadow: 1px 1px 2px rgb(168, 168, 168),
-    inset 1px 1px 2px rgb(233, 155, 198);
+    inset 1px 1px 3px rgb(233, 155, 225);
+}
+
+.beastContainer:hover {
+  box-shadow: 1px 1px 2px rgb(168, 168, 168),
+    inset 1px 1px 15px rgb(149, 80, 219);
 }
 
 .beastContainer * {
@@ -55,17 +60,23 @@
 }
 
 .beastContainer img:hover {
-  width: 105%;
-  height: 105%;
-
   cursor: pointer;
-
-  transform: scale(1.02, 1.02);
+  transform: scale(1.03, 1.03);
 }
 
 .beastContainer img:active {
   transform: unset;
   transition: all 0.1s;
+}
+
+.beastContainer:active .heart div {
+  transform: scale(1.2, 1.2);
+  transition: all .2s;
+}
+
+.beastContainer:active .heart div:nth-child(2) {
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .beastDescription {
@@ -76,15 +87,6 @@
 
   padding: 5px;
 }
-
-
-
-
-
-
-
-
-
 
 .heartContainer {
   position: relative;
@@ -106,7 +108,7 @@
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
-  font-size: 25px;
+  font-size: 22px;
   top: 32px;
   right: 23px;
 }
