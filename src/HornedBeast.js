@@ -1,4 +1,7 @@
 import React from "react";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 import './HornedBeast.css';
 
 class HornedBeast extends React.Component {
@@ -16,9 +19,14 @@ class HornedBeast extends React.Component {
     return <div className="beastContainer" key={this.props.id}>
       <h2>{this.props.title}</h2>
       <div className="heartContainer">
-        <div className="heart"><div>&#9829;</div><div>{this.state.likes}</div></div>
+        <div className="heart"><div>&#9829;</div><div>{this.state.likes !== 0 && this.state.likes}</div></div>
         <div className="img-container">
-          <img onClick={this.handleLikeClick} src={this.props.imageUrl} alt={this.props.title} title={this.props.title} />
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip id="creature-tooltip">{`Click to \u2665 ${this.props.title}!`}</Tooltip>}
+          >
+            <img onClick={this.handleLikeClick} src={this.props.imageUrl} alt={this.props.title} title={this.props.title} />
+          </OverlayTrigger>
         </div>
       </div>
       <div className="beastDescription-container">
