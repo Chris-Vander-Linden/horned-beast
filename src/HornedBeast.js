@@ -1,7 +1,7 @@
 import React from "react";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-
+import Button from 'react-bootstrap/Button';
 import './HornedBeast.css';
 
 class HornedBeast extends React.Component {
@@ -11,11 +11,11 @@ class HornedBeast extends React.Component {
   }
 
   handleLikeClick = () => {
-    console.log("click");
     this.setState({ likes: this.state.likes + 1 });
   }
 
   render() {
+    console.log(this.props)
     return <div className="beastContainer" key={this.props.id}>
       <h2>{this.props.title}</h2>
       <div className="heartContainer">
@@ -29,9 +29,9 @@ class HornedBeast extends React.Component {
           </OverlayTrigger>
         </div>
       </div>
-      <div className="beastDescription-container">
-        <p className="beastDescription">{this.props.description}</p>
-      </div>
+      <Button className="me-2 mb-2 beastDescription-container" onClick={() => this.props.onClick(this.props.title ,this.state.likes)}>
+        Learn more about {this.props.title}
+      </Button>
     </div>;
   }
 }
