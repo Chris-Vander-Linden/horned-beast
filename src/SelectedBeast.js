@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from 'react-bootstrap/Modal';
+import { Heartbreak, Heart } from 'react-bootstrap-icons';
 import './SelectedBeast.css';
 
 class SelectedBeast extends React.Component {
@@ -10,12 +11,12 @@ class SelectedBeast extends React.Component {
       <>
         <Modal show={this.props.show} fullscreen='lg-down' onHide={this.props.onClick}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props?.selectedBeast[0]?.title ?? ''}</Modal.Title>
+            <Modal.Title>{this.props?.selectedBeast[0]?.title ?? ''} = {this.props?.likes !== 0 && this.props.likes + ' X '} {this.props?.likes !== 0 ? <Heart/> : <Heartbreak />}
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <img src={this.props?.selectedBeast[0]?.image_url ?? ''} alt='' /><br />
-            {this.props?.selectedBeast[0]?.description ?? ''}<br />
-            &#9829; {this.props?.likes ?? ''}
+            {this.props?.selectedBeast[0]?.description ?? ''}
           </Modal.Body>
         </Modal>
       </>

@@ -103,11 +103,6 @@
     -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.beastDescription-container.btn.btn-primary {
-  font-size: 20px;
-  font-weight: bold;
-}
-
 .heartContainer {
   position: relative;
   border-radius: 50%;
@@ -144,4 +139,16 @@
 .heartContainer:active .heart div:nth-child(2) {
   opacity: 0;
   transition: all 0.3s;
+}
+
+
+/* button component */
+.beastDescription-container svg{
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+}
+
+.beastDescription-container.btn.btn-primary {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
