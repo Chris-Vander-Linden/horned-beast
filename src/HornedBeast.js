@@ -30,7 +30,7 @@ class HornedBeast extends React.Component {
         </div>
       </div>
       <Button className="me-2 mb-2 beastDescription-container" onClick={() => this.props.onClick(this.props.title ,this.state.likes)}>
-        Learn more about {this.props.title}
+        Learn about {this.props.title}
       </Button>
     </div>;
   }

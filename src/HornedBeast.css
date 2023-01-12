@@ -110,6 +110,7 @@
 
 .heartContainer {
   position: relative;
+  border-radius: 50%;
 }
 
 .heart div {
@@ -133,14 +134,14 @@
   right: 23px;
 }
 
-.beastContainer:active .heart div {
+.heartContainer:active .heart div {
   transform: scale(1.2, 1.2);
   text-shadow: 2px 2px 9px #000, -1px -1px 3 #000, 1px -1px 3 #000,
     -1px 1px 3 #000, 1px 1px 3 #000;
   transition: all 0.2s;
 }
 
-.beastContainer:active .heart div:nth-child(2) {
+.heartContainer:active .heart div:nth-child(2) {
   opacity: 0;
   transition: all 0.3s;
 }
