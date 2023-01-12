@@ -2,6 +2,7 @@ import React from "react";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import Button from 'react-bootstrap/Button';
+import { Book } from 'react-bootstrap-icons';
 import './HornedBeast.css';
 
 class HornedBeast extends React.Component {
@@ -30,7 +31,7 @@ class HornedBeast extends React.Component {
         </div>
       </div>
       <Button className="me-2 mb-2 beastDescription-container" onClick={() => this.props.onClick(this.props.title ,this.state.likes)}>
-        Learn more about {this.props.title}
+        <Book width="25" height="25" fill="currentColor" /> {this.props.title}
       </Button>
     </div>;
   }
