@@ -15,24 +15,27 @@ class Main extends React.Component {
     }
   }
 
-  // function to be passed to SelectedBeast and HornedBeast.
-  handleShowClick = () => {
-    console.log(this.state.show);
-    let value = !this.state.show
-    this.setState({ show: value });
+  // function to be passed to both SelectedBeast and HornedBeast
+  handleSelectedBeastDataClick = (title, likes) => {
+    this.setState({
+      show: !this.state.show,
+      selectedBeast: { name: title, likes: likes }
+    });
   }
 
   render() {
     const { hornedBeastsData } = this.state;
     console.log(hornedBeastsData);
 
+
+
     return (<>
       <main>
         {hornedBeastsData.map((beast, index) => {
-          return <HornedBeast key={index} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleShowClick} />;
+          return <HornedBeast key={index} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
         })}
       </main>
-      <SelectedBeast show={this.state.show} onClick={this.handleShowClick} />
+      <SelectedBeast show={this.state.show} selectedBeast={this.state.hornedBeastsData.filter(beast => beast.title === this.state.selectedBeast.name)} likes={this.state.selectedBeast.likes} onClick={this.handleSelectedBeastDataClick} />
     </>
     );
   }
