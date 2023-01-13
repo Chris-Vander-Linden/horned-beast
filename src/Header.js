@@ -7,13 +7,15 @@ class Header extends React.Component {
     console.log(this.props);
     return (
       <header>
-        <h1>Horned Beast</h1>
-        <div id="headerInnerContainer">
-          {this.props.pulse ? <HeartPulseFill width="32" height="32" onClick={() => {this.props.onClick.handlePulseClick()}}/> :
-          <HeartPulse width="32" height="32" onClick={() => { this.props.onClick.handlePulseClick() }} />}
-          
-          {!this.props.darkTheme ? <ToggleOn width="40" height="40" onClick={() => {this.props.onClick.handleThemeClick()}} /> : 
-          <ToggleOff width="40" height="40" onClick={() => { this.props.onClick.handleThemeClick() }} />}
+        <div id="headerOuterContainer">
+          <h1>Horned Beast</h1>
+          <div id="headerInnerContainer">
+            {this.props.pulse ? <HeartPulseFill width="32" height="32" onClick={() => { this.props.onClick.handlePulseClick() }} /> :
+              <HeartPulse width="32" height="32" onClick={() => { this.props.onClick.handlePulseClick() }} />}
+
+            {!this.props.darkTheme ? <ToggleOn width="40" height="40" onClick={() => { this.props.onClick.handleThemeClick() }} /> :
+              <ToggleOff width="40" height="40" onClick={() => { this.props.onClick.handleThemeClick() }} />}
+          </div>
         </div>
       </header>
     );
