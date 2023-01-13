@@ -26,7 +26,7 @@ class Main extends React.Component {
   render() {
     const { hornedBeastsData } = this.state;
     return (<>
-      <main>
+      <main className={this.props.pulse && "pulse"}>
         {hornedBeastsData.map((beast, index) => {
           return <HornedBeast key={index} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
         })}
