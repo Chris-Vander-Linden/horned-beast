@@ -26,6 +26,11 @@ class Main extends React.Component {
   render() {
     const { hornedBeastsData } = this.state;
     return (<>
+      {/* Search Component Start */}
+      <label for="site-search">Search the site:</label>
+      <input type="search" id="site-search" name="q" placeholder="Search Horned Beasts..." />
+      <button>Search</button>
+      {/* Search Component End */}
       <main className={this.props.pulse && "pulse"}>
         {hornedBeastsData.map((beast, index) => {
           return <HornedBeast key={index} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
