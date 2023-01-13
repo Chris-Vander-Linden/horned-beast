@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       darkTheme: true,
-      pulse: false
+      pulse: true
     }
   }
 
@@ -30,10 +30,9 @@ class App extends React.Component {
     });
   }
   render() {
-    console.log(this.state);
     return <>
       <Header onClick={{ handleThemeClick: this.handleThemeClick, handlePulseClick: this.handlePulseClick }} pulse={this.state.pulse} darkTheme={this.state.darkTheme} />
-      <Main />
+      <Main pulse={this.state.pulse} />
       <Footer />
     </>;
   }

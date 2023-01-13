@@ -103,9 +103,33 @@
     -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+/* button component */
+.beastDescription-container svg {
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+}
+
+.beastDescription-container.btn.btn-primary {
+  /* Bootstrap added !imortant to the margin.  I can override it in App.css but the component styling exists here */
+  margin: 5px !important;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+/* Heart Container */
+
 .heartContainer {
   position: relative;
   border-radius: 50%;
+}
+
+div.heart div:nth-child(1) {
+  color: rgb(0, 0, 0);
+}
+
+.pulse div.heart div:nth-child(1) {
+  color: rgb(230, 0, 191);
 }
 
 .heart div {
@@ -114,7 +138,6 @@
   right: 6px;
   z-index: 3;
   font-size: 50px;
-  color: rgb(230, 0, 191);
   text-shadow: 1px 1px 6px #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
   font-style: initial;
@@ -129,28 +152,51 @@
   right: 23px;
 }
 
-.heartContainer:active .heart div {
-  transform: scale(1.2, 1.2);
-  text-shadow: 2px 2px 9px #000, -1px -1px 3 #000, 1px -1px 3 #000,
-    -1px 1px 3 #000, 1px 1px 3 #000;
-  transition: all 0.2s;
-}
-
 .heartContainer:active .heart div:nth-child(2) {
   opacity: 0;
   transition: all 0.3s;
 }
 
-/* button component */
-.beastDescription-container svg {
-  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+.pulse .heart.activePulse div:nth-child(1) {
+  animation: 1s infinite normal pulse;
 }
 
-.beastDescription-container.btn.btn-primary {
-  /* Bootstrap added !imortant to the margin.  I can override it in App.css but the component styling exists here */
-  margin: 5px !important;
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgb(0, 0, 0);
-  border: 1px solid rgb(0, 0, 0);
+.pulse .beastContainer:nth-of-type(3n-1) .heart.activePulse div:nth-child(1) {
+  animation: 1.25s infinite normal pulse;
+}
+
+.pulse .heartContainer:active div.heart div:nth-child(1) {
+  animation: none;
+  transform: scale(1.2, 1.2);
+  color: rgb(255, 92, 211);
+  text-shadow: 2px 2px 9px #000, -1px -1px 3 #000, 1px -1px 3 #000,
+    -1px 1px 3 #000, 1px 1px 3 #000;
+  transition: all 0.2s;
+}
+
+@keyframes pulse {
+  0% {
+    color: rgb(230, 0, 191);
+    transform: current;
+  }
+
+  60% {
+    color: rgb(255, 92, 211);
+    transform: scale(1.2, 1.2);
+  }
+
+  70% {
+    color: rgb(230, 0, 191);
+    transform: scale(1, 1);
+  }
+
+  80% {
+    color: rgb(255, 92, 211);
+    transform: scale(1.2, 1.2);
+  }
+
+  100% {
+    color: rgb(230, 0, 191);
+    transform: current;
+  }
 }
