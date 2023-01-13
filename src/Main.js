@@ -32,8 +32,8 @@ class Main extends React.Component {
       <button>Search</button>
       {/* Search Component End */}
       <main className={this.props.pulse && "pulse"}>
-        {hornedBeastsData.map((beast, index) => {
-          return <HornedBeast key={index} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
+        {hornedBeastsData.map((beast) => {
+          return <HornedBeast key={beast._id} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
         })}
       </main>
       <SelectedBeast show={this.state.show} selectedBeast={this.state.hornedBeastsData.filter(beast => beast.title === this.state.selectedBeast.name)} likes={this.state.selectedBeast.likes} onClick={this.handleSelectedBeastDataClick} />
