@@ -6,7 +6,6 @@ import './SelectedBeast.css';
 class SelectedBeast extends React.Component {
 
   render() {
-    console.log(this.props);
     return (
       <>
         <Modal show={this.props.show} fullscreen='lg-down' onHide={this.props.onClick}>

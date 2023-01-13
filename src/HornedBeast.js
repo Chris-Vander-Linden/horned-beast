@@ -16,7 +16,6 @@ class HornedBeast extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return <div className="beastContainer" key={this.props.id}>
       <h2>{this.props.title}</h2>
       <div className="heartContainer">

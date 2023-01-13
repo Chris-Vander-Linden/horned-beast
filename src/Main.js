@@ -25,10 +25,6 @@ class Main extends React.Component {
 
   render() {
     const { hornedBeastsData } = this.state;
-    console.log(hornedBeastsData);
-
-
-
     return (<>
       <main>
         {hornedBeastsData.map((beast, index) => {
