@@ -29,9 +29,10 @@ class App extends React.Component {
       pulse: !this.state.pulse
     });
   }
+
   render() {
     return <>
-      <Header onClick={{ handleThemeClick: this.handleThemeClick, handlePulseClick: this.handlePulseClick }} pulse={this.state.pulse} darkTheme={this.state.darkTheme} />
+      <Header clickHandlers={{ handleThemeClick: this.handleThemeClick, handlePulseClick: this.handlePulseClick }} pulse={this.state.pulse} darkTheme={this.state.darkTheme} />
       <Main pulse={this.state.pulse} />
       <Footer />
     </>;
