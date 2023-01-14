@@ -27,11 +27,11 @@ class Main extends React.Component {
     const { hornedBeastsData } = this.state;
     return (<>
       {/* Search Component Start */}
-      <label for="site-search">Search the site:</label>
+      <label htmlFor="site-search">Search the site:</label>
       <input type="search" id="site-search" name="q" placeholder="Search Horned Beasts..." />
       <button>Search</button>
       {/* Search Component End */}
-      <main className={this.props.pulse && "pulse"}>
+      <main className={this.props.pulse ? "pulse" : ""}>
         {hornedBeastsData.map((beast) => {
           return <HornedBeast key={beast._id} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
         })}
