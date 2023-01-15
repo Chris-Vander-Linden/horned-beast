@@ -11,7 +11,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       darkTheme: true,
-      pulse: true
+      pulse: true,
+      beastFilter: ''
     }
   }
 
@@ -30,10 +31,24 @@ class App extends React.Component {
     });
   }
 
+  handleSearchChange = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+    this.setState({
+      beastFilter: event.target.value
+    });
+
+
+
+  }
+
   render() {
     return <>
-      <Header clickHandlers={{ handleThemeClick: this.handleThemeClick, handlePulseClick: this.handlePulseClick }} pulse={this.state.pulse} darkTheme={this.state.darkTheme} />
-      <Main pulse={this.state.pulse} />
+      <Header eventHandlers={{
+        handleThemeClick: this.handleThemeClick, handlePulseClick: this.handlePulseClick,
+        onKeyUp: this.handleSearchChange
+      }} pulse={this.state.pulse} darkTheme={this.state.darkTheme} />
+      <Main pulse={this.state.pulse} beastFilter={this.state.beastFilter} />
       <Footer />
     </>;
   }

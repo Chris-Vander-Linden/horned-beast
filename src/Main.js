@@ -25,16 +25,20 @@ class Main extends React.Component {
 
   render() {
     const { hornedBeastsData } = this.state;
+    const searchResults = hornedBeastsData.filter(beast => {
+      return this.props.beastFilter.length === 0 ? true : beast.title.toUpperCase().includes(this.props.beastFilter.toUpperCase());
+    });
+
     return (<>
-      {/* Search Component Start */}
-      <label htmlFor="site-search">Search the site:</label>
-      <input type="search" id="site-search" name="q" placeholder="Search Horned Beasts..." />
-      <button>Search</button>
-      {/* Search Component End */}
       <main className={this.props.pulse ? "pulse" : ""}>
-        {hornedBeastsData.map((beast) => {
+        {/* filter then map formatted beast data */}
+        {searchResults.map((beast) => {
           return <HornedBeast key={beast._id} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
         })}
+
+        {/* Render message for no results */}
+        {searchResults.length === 0 && <div id="noResults" className="alert alert-danger" role="alert" >There are no beasts called {this.props.beastFilter}!!!</div>}
+
       </main>
       <SelectedBeast show={this.state.show} selectedBeast={this.state.hornedBeastsData.filter(beast => beast.title === this.state.selectedBeast.name)} likes={this.state.selectedBeast.likes} onClick={this.handleSelectedBeastDataClick} />
     </>
