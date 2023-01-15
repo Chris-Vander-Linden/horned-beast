@@ -1,6 +1,7 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
 import SelectedBeast from "./SelectedBeast";
+import { Fire } from 'react-bootstrap-icons';
 import hornedBeastsData from "./data.json";
 import './Main.css';
 
@@ -30,14 +31,14 @@ class Main extends React.Component {
     });
 
     return (<>
-      <main className={this.props.pulse ? "pulse" : ""}>
+      <main className={this.props.pulse ? "pulse" : "death"}>
         {/* filter then map formatted beast data */}
         {searchResults.map((beast) => {
           return <HornedBeast key={beast._id} id={beast._id} title={beast.title} description={beast.description} imageUrl={beast.image_url} onClick={this.handleSelectedBeastDataClick} />;
         })}
 
         {/* Render message for no results */}
-        {searchResults.length === 0 && <div id="noResults" className="alert alert-danger" role="alert" >There are no beasts called {this.props.beastFilter}!!!</div>}
+        {searchResults.length === 0 && <div id="noResults" className="alert alert-danger" role="alert" ><Fire width="32" height="32" />There are no beasts called {this.props.beastFilter}!!!</div>}
 
       </main>
       <SelectedBeast show={this.state.show} selectedBeast={this.state.hornedBeastsData.filter(beast => beast.title === this.state.selectedBeast.name)} likes={this.state.selectedBeast.likes} onClick={this.handleSelectedBeastDataClick} />

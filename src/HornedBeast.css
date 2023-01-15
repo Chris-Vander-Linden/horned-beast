@@ -231,3 +231,13 @@ div.heart div:nth-child(2) {
     transform: current;
   }
 }
+
+/* death portion of beasts */
+
+.death .img-container {
+  background-color: #000;
+}
+
+.death img {
+  display: none;
+}
