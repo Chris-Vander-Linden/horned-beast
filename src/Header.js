@@ -5,14 +5,20 @@ import './Header.css';
 class Header extends React.Component {
   render() {
     const Pulse = this.props.pulse ? HeartPulse : HeartPulseFill;
-    const Toggle = !this.props.darkTheme ? ToggleOn : ToggleOff;
+    //const Toggle = !this.props.darkTheme ? ToggleOn : ToggleOff;
     return (
       <header>
         <div id="headerOuterContainer">
           <h1>Horned Beast</h1>
           <div id="headerInnerContainer">
-            <Pulse width="32" height="32" onClick={() => { this.props.clickHandlers.handlePulseClick() }} />
-            <Toggle width="40" height="40" onClick={() => { this.props.clickHandlers.handleThemeClick() }} />
+            {/* Search Component Start */}
+            <label htmlFor="beastSearch"></label>
+            <input id="beastSearch" type="search" name="q" placeholder="Search Horned Beasts..." onKeyUp={this.props.eventHandlers.onKeyUp} />
+            {/* Search Component End */}
+            <Pulse width="32" height="32" onClick={() => { this.props.eventHandlers.handlePulseClick() }} />
+            {/* 
+            <Toggle width="40" height="40" onClick={() => { this.props.eventHandlers.handleThemeClick() }} />
+            */}
           </div>
         </div>
       </header>
