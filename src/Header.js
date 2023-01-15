@@ -1,5 +1,6 @@
 import React from "react";
-import { ToggleOn, ToggleOff, HeartPulse, HeartPulseFill } from 'react-bootstrap-icons';
+//import { ToggleOn, ToggleOff } from 'react-bootstrap-icons';
+import { HeartPulse, HeartPulseFill } from 'react-bootstrap-icons';
 import './Header.css';
 
 class Header extends React.Component {
