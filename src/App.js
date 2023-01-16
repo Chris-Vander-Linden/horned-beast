@@ -16,16 +16,14 @@ class App extends React.Component {
     }
   }
 
-  // functions to be passed to Header
+  // methods to be passed to Header
   handleThemeClick = () => {
-    console.log("Theme");
     this.setState({
       darkTheme: !this.state.darkTheme
     });
   }
 
   handlePulseClick = () => {
-    console.log("pulse");
     this.setState({
       pulse: !this.state.pulse
     });
@@ -33,13 +31,9 @@ class App extends React.Component {
 
   handleSearchChange = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
     this.setState({
       beastFilter: event.target.value
     });
-
-
-
   }
 
   render() {
