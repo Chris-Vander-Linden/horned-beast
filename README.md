@@ -6,8 +6,8 @@ Estimate of time needed to complete: 2 - 4 hours
 
 Start time: 12:00 PM.  1/11/2023
 
-Finish time: _____
+Finish time: 11:00 PM.  1/16/2023
 
-Actual time needed to complete: _____
+Actual time needed to complete: 5 hours
 
-Notes: I can probably complete this project in under 2 hours but I might add a few extra features, which will increase the time.
+Notes: I spent some extra time working on the header in preparation for including forms.
