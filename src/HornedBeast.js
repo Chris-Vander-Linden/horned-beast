@@ -20,7 +20,7 @@ class HornedBeast extends React.Component {
       <h2>{this.props.title}</h2>
       <div className="heartContainer">
         <div className={`heart ${this.state.likes !== 0 && "activePulse"}`} >
-          <div>&#9829;</div>
+          <div onClick={this.handleLikeClick}>&#9829;</div>
           <div>{this.state.likes !== 0 && this.state.likes}</div>
         </div>
         <div className="img-container">
