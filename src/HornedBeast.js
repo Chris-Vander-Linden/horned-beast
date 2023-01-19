@@ -24,7 +24,7 @@ class HornedBeast extends React.Component {
           <div>{this.state.likes !== 0 && this.state.likes}</div>
         </div>
         <div className="img-container">
-          <OverlayTrigger placement="bottom" overlay={<Tooltip id="creature-tooltip">{`Click to \u2665 ${this.props.title}!`}</Tooltip>} >
+          <OverlayTrigger placement="bottom" overlay={<Tooltip id="creature-tooltip" style={{ zIndex: "2" }}>{`Click to \u2665 ${this.props.title}!`}</Tooltip>} >
             <img onClick={this.handleLikeClick} src={this.props.imageUrl} alt={this.props.title} title={this.props.title} />
           </OverlayTrigger>
         </div>

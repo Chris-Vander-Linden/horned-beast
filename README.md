@@ -1,13 +1,13 @@
 # Horned Beast
 
-Number and name of feature: Lab: Class 03, Gallery Of Horns, Passing Functions in Props
+Number and name of feature: Lab: Class 04, Gallery Of Horns, Filter by Numbers of Horns
 
-Estimate of time needed to complete: 2 - 4 hours
+Estimate of time needed to complete: 6 hours
 
-Start time: 12:00 PM.  1/11/2023
+Start time: 12:00 AM.  1/17/2023
 
-Finish time: 11:00 PM.  1/16/2023
+Finish time: 
 
-Actual time needed to complete: 5 hours
+Actual time needed to complete: 
 
-Notes: I spent some extra time working on the header in preparation for including forms.
+Notes: 

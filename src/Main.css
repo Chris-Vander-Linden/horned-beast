@@ -5,6 +5,17 @@ main {
   max-width: 1200px;
 }
 
+main.showMenu {
+  margin-top: 110px;
+}
+
+/* mobile */
+@media (max-width: 563px) {
+  main.showMenu {
+    margin-top: 160px;
+  }
+}
+
 #noResults {
   width: 100%;
   margin: 10px;
