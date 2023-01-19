@@ -8,10 +8,16 @@ header {
 
   position: fixed;
   top: 0px;
-  z-index: 10;
+  z-index: 100;
   border-bottom: 4px solid rgb(29, 0, 59);
   border-top: 4px solid rgb(29, 0, 59);
   box-shadow: 1px 1px 3px rgb(48, 46, 46);
+}
+
+header h1 a, header h1 a:hover, header h1 a:active {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+  cursor: pointer;
 }
 
 #headerOuterContainer {
@@ -25,7 +31,8 @@ header {
   background-color: rgb(29, 0, 59);
 }
 
-#headerInnerContainer * {
+#headerInnerContainer *,
+#menuHeart {
   margin-left: 10px;
   cursor: pointer;
   filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
@@ -33,4 +40,50 @@ header {
 
 [type="search"] {
   outline: none;
+}
+
+#menu form {
+  display: none;
+  font-weight: bold;
+  font-family: initial;
+}
+
+#menu form * {
+  border-color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+#menu form button {
+  background-color: rgb(212, 133, 255);
+  color: rgb(0, 0, 0);
+  min-width: 70px;
+}
+
+#menu form button:hover {
+  background-color: rgb(182, 45, 255);
+}
+
+#menu.showMenu form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  background-color: rgb(76, 46, 108);
+  border-left: 4px solid rgb(29, 0, 59);
+  border-right: 4px solid rgb(29, 0, 59);
+}
+
+#menu.showMenu .input-group {
+  margin: 5px;
+}
+
+/* mobile */
+@media (max-width: 563px) {
+  #menu.showMenu form {
+    flex-direction: column;
+  }
+
+  #menu.showMenu .input-group {
+    width: initial;
+  }
 }
