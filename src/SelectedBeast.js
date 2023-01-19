@@ -15,7 +15,8 @@ class SelectedBeast extends React.Component {
           </Modal.Header>
           <Modal.Body className={"bg-dark text-white"} >
             <img src={this.props?.selectedBeast[0]?.image_url ?? ''} alt='' /><br />
-            {this.props?.selectedBeast[0]?.description ?? ''}
+            {`Description: ${this.props?.selectedBeast[0]?.description ?? ''}`}<br />
+            {`# of horns: ${this.props?.selectedBeast[0]?.horns ?? ''}`}
           </Modal.Body>
         </Modal>
       </>
